@@ -1,7 +1,7 @@
 :root { --ink:#f7fffc; --muted:#b8c9c6; --cream:#031218; --mint:#49f4bd; --purple:#8777ff; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; color:var(--ink); background:#031218 url("assets/ai-waves-background.png") center bottom / cover fixed no-repeat; font-family:"DM Sans",sans-serif; }
+body { margin:0; color:var(--ink); background:#031218 url("assets/ai-waves-background.jpg") center bottom / cover fixed no-repeat; font-family:"DM Sans",sans-serif; }
 .site-header { min-height:84px; padding:0 clamp(20px,6vw,90px); display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid rgba(154,255,223,.15); background:rgba(3,18,24,.78); position:sticky; top:0; z-index:10; backdrop-filter:blur(15px); }
 .brand { display:flex; align-items:center; gap:9px; text-decoration:none; color:var(--ink); font:700 15px/1 "Space Grotesk",sans-serif; letter-spacing:.08em; }
 .brand-mark { display:grid; place-items:center; width:31px; aspect-ratio:1; border-radius:9px; background:var(--mint); color:#02140f; letter-spacing:0; }
