@@ -55,6 +55,21 @@ function renderCart() {
 
 document.querySelector('#checkout-form')?.addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#checkout-message').textContent = 'Demo preview only — no payment has been started or collected.'; });
 
+const cardDetails = document.querySelector('#card-details');
+const paypalDetails = document.querySelector('#paypal-details');
+document.querySelectorAll('input[name="payment-method"]').forEach((option) => option.addEventListener('change', () => {
+  const showCardDetails = option.checked && option.value === 'card';
+  const showPaypalDetails = option.checked && option.value === 'paypal';
+  if (cardDetails) {
+    cardDetails.hidden = !showCardDetails;
+    cardDetails.setAttribute('aria-hidden', String(!showCardDetails));
+  }
+  if (paypalDetails) {
+    paypalDetails.hidden = !showPaypalDetails;
+    paypalDetails.setAttribute('aria-hidden', String(!showPaypalDetails));
+  }
+}));
+
 // Add the deployed Google Apps Script Web App URL here after it is created in the Subscribers Sheet.
 const subscriberEndpoint = '';
 document.querySelector('#subscriber-form')?.addEventListener('submit', async (event) => {
