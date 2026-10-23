@@ -4,6 +4,14 @@ const toast = document.querySelector('#toast');
 const productGrid = document.querySelector('.product-grid');
 let toastTimer;
 
+const menuToggle = document.querySelector('#menu-toggle');
+const mainNavigation = document.querySelector('#main-navigation');
+menuToggle?.addEventListener('click', () => {
+  const isOpen = mainNavigation.classList.toggle('is-open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+});
+
 // The first cart version stored only a total count, so it cannot show product names or prices.
 if (!sessionStorage.getItem(cartKey) && sessionStorage.getItem('aspiring-ai-cart-count')) {
   sessionStorage.removeItem('aspiring-ai-cart-count');

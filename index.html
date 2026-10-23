@@ -28,17 +28,19 @@
       .hero-button { display:inline-flex; gap:17px; align-items:center; padding:15px 19px; border-radius:10px; color:#02140f; background:var(--mint); text-decoration:none; font-weight:700; }.hero-button span { font-size:21px; }
       .hero-robot { position:absolute; z-index:1; right:clamp(0px,4vw,70px); bottom:-75px; width:clamp(360px,42vw,640px); pointer-events:none; filter:drop-shadow(0 24px 28px rgba(0,0,0,.45)); }.hero-robot img { display:block; width:100%; height:auto; }
       footer { padding:25px; text-align:center; color:#9eb7b1; border-top:1px solid rgba(155,255,224,.12); background:rgba(2,14,18,.84); font-size:13px; }
-      @media (max-width:760px) { .site-header { min-height:70px; padding-inline:18px; } nav { display:none; } .hero { min-height:680px; padding:80px 24px; }.hero-copy { max-width:100%; }.hero-robot { right:-80px; bottom:-85px; width:490px; opacity:.52; }.hero:after { opacity:.5; } }
+      .menu-toggle { display:none; }
+      @media (max-width:760px) { .site-header { min-height:auto; padding:13px 18px 12px; flex-wrap:wrap; } .brand { font-size:12px; } .cart-button { padding:9px 12px; } .menu-toggle { display:grid; place-items:center; width:39px; height:39px; margin-left:auto; padding:0; border:1px solid rgba(155,255,224,.24); border-radius:9px; color:var(--ink); background:rgba(255,255,255,.04); cursor:pointer; } .menu-toggle span,.menu-toggle::before,.menu-toggle::after { content:""; display:block; width:17px; height:2px; border-radius:4px; background:var(--mint); } .menu-toggle span { margin:3px 0; } nav { display:none; order:4; width:100%; justify-content:center; gap:22px; padding:11px 0 2px; } nav.is-open { display:flex; } nav a { font-size:13px; } .hero { min-height:680px; padding:80px 24px; }.hero-copy { max-width:100%; }.hero-robot { right:-80px; bottom:-85px; width:490px; opacity:.52; }.hero:after { opacity:.5; } }
     </style>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Aspiring AI Deals home"><span class="brand-mark">A</span>ASPIRING AI DEALS</a>
-      <nav aria-label="Main navigation">
+      <nav id="main-navigation" aria-label="Main navigation">
         <a href="products.html">Products</a>
         <a href="#about">About</a>
         <a href="#privacy">Privacy</a>
       </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-navigation" aria-expanded="false"><span></span></button>
       <a class="cart-button" href="cart.html" aria-label="Open shopping cart">
         Cart <span id="cart-count" aria-live="polite">0</span>
       </a>
