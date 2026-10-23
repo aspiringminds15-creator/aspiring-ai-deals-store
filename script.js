@@ -53,7 +53,7 @@ function renderCart() {
   }));
 }
 
-document.querySelector('#checkout-form')?.addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#checkout-message').textContent = 'Your order details are ready. Connect a secure payment provider before accepting payments.'; });
+document.querySelector('#checkout-form')?.addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#checkout-message').textContent = 'Demo preview only — no payment has been started or collected.'; });
 
 // Add the deployed Google Apps Script Web App URL here after it is created in the Subscribers Sheet.
 const subscriberEndpoint = '';
