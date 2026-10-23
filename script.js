@@ -4,6 +4,11 @@ const toast = document.querySelector('#toast');
 const productGrid = document.querySelector('.product-grid');
 let toastTimer;
 
+// The first cart version stored only a total count, so it cannot show product names or prices.
+if (!sessionStorage.getItem(cartKey) && sessionStorage.getItem('aspiring-ai-cart-count')) {
+  sessionStorage.removeItem('aspiring-ai-cart-count');
+}
+
 const extraProducts = [
   ['Content Compass', 24, 'photo-1460925895917-afdab827c52f'], ['Pixel Pilot', 34, 'photo-1558655146-d09347e92766'],
   ['Launch Lens', 45, 'photo-1497366811353-6870744d04b2'], ['Voice Canvas', 32, 'photo-1589903308904-1010c2294adc'],
