@@ -54,4 +54,42 @@ function renderCart() {
 }
 
 document.querySelector('#checkout-form')?.addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#checkout-message').textContent = 'Your order details are ready. Connect a secure payment provider before accepting payments.'; });
+
+// Add the deployed Google Apps Script Web App URL here after it is created in the Subscribers Sheet.
+const subscriberEndpoint = '';
+document.querySelector('#subscriber-form')?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const email = form.elements.email.value.trim();
+  const message = document.querySelector('#subscribe-message');
+  message.className = 'subscribe-note';
+
+  if (!email || !form.elements.email.checkValidity()) {
+    message.textContent = 'Please enter a valid email address.';
+    message.classList.add('error');
+    form.elements.email.focus();
+    return;
+  }
+
+  if (!subscriberEndpoint) {
+    message.textContent = 'The sign-up connection is being completed. Please check back shortly.';
+    message.classList.add('error');
+    return;
+  }
+
+  try {
+    await fetch(subscriberEndpoint, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams({ email, source: 'Aspiring AI Deals website' }),
+    });
+    form.reset();
+    message.textContent = 'You are subscribed. Thank you!';
+    message.classList.add('success');
+  } catch {
+    message.textContent = 'We could not complete your subscription. Please try again.';
+    message.classList.add('error');
+  }
+});
+
 updateCartCount(); renderCart();

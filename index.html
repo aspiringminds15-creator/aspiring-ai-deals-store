@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
     <style>
       /* Kept here too so the home page displays correctly when opened directly from Chrome. */
       :root { --ink:#f7fffc; --muted:#b8c9c6; --mint:#49f4bd; }
@@ -55,10 +55,32 @@
           <img src="assets/aspiring-ai-robot.gif" alt="" />
         </div>
       </section>
+
+      <section class="subscribe-section" aria-labelledby="subscribe-heading">
+        <div class="subscribe-inner">
+          <article class="disclosure-copy">
+            <p class="section-label">AFFILIATE DISCLOSURE</p>
+            <h2>How this site is supported</h2>
+            <p>Some links we share are affiliate links. If you buy through one, Aspiring AI Deals may receive a commission from the platform or product creator at no extra cost to you. Always review the current features, price, terms, and refund policy before purchasing.</p>
+          </article>
+
+          <article class="subscribe-copy">
+            <p class="section-label">PRIVACY &amp; SUBSCRIBE</p>
+            <h2 id="subscribe-heading">Your inbox, your choice</h2>
+            <p>Get AI tool deals, launch alerts, and practical marketing tips. We use your email only to send the updates you requested. We do not sell your personal information, and you can unsubscribe at any time.</p>
+            <form class="subscribe-form" id="subscriber-form" novalidate>
+              <label class="sr-only" for="subscriber-email">Email address</label>
+              <input id="subscriber-email" name="email" type="email" placeholder="Enter your email address" autocomplete="email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+            <p class="subscribe-note" id="subscribe-message" aria-live="polite">No spam. Unsubscribe anytime.</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <footer>© 2026 Aspiring AI Deals · Build with more clarity.</footer>
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
   </body>
 </html>
