@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A responsive AI product store demo." />
+    <title>Aspiring AI Deals | AI tools for better work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Kept here too so the home page displays correctly when opened directly from Chrome. */
+      :root { --ink:#f7fffc; --muted:#b8c9c6; --mint:#49f4bd; }
+      * { box-sizing:border-box; }
+      body { margin:0; min-height:100vh; color:var(--ink); background:#031218 url("assets/ai-waves-background.png") center bottom / cover fixed no-repeat; font-family:"DM Sans",Arial,sans-serif; }
+      .site-header { min-height:84px; padding:0 clamp(20px,6vw,90px); display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid rgba(154,255,223,.15); background:rgba(3,18,24,.78); position:sticky; top:0; z-index:10; backdrop-filter:blur(15px); }
+      .brand { display:flex; align-items:center; gap:9px; color:var(--ink); text-decoration:none; font:700 15px/1 "Space Grotesk",Arial,sans-serif; letter-spacing:.08em; }
+      .brand-mark { display:grid; place-items:center; width:31px; aspect-ratio:1; border-radius:9px; background:var(--mint); color:#02140f; letter-spacing:0; }
+      nav { display:flex; gap:29px; } nav a { color:var(--muted); text-decoration:none; font-weight:600; font-size:14px; }
+      .cart-button { padding:11px 15px; border:0; border-radius:999px; background:var(--mint); color:#02140f; font:700 14px "DM Sans",Arial,sans-serif; cursor:pointer; } .cart-button span { display:inline-grid; place-items:center; min-width:20px; height:20px; margin-left:5px; border-radius:50%; color:var(--mint); background:#062a24; }
+      .hero { min-height:600px; padding:clamp(70px,12vw,148px) clamp(20px,9vw,145px); position:relative; isolation:isolate; overflow:hidden; color:white; background:linear-gradient(90deg,rgba(2,14,18,.96) 0%,rgba(2,14,18,.84) 47%,rgba(2,14,18,.28) 100%); }
+      .hero:after { content:""; width:430px; height:430px; position:absolute; right:-100px; bottom:-250px; z-index:-1; border:40px solid rgba(73,244,189,.30); border-radius:50%; box-shadow:0 0 0 35px rgba(0,166,127,.12); }
+      .hero-copy { position:relative; z-index:2; max-width:690px; }
+      .eyebrow { margin:0 0 13px; color:var(--mint); font-size:11px; font-weight:700; letter-spacing:.18em; }
+      h1 { max-width:680px; margin:0; font-family:"Space Grotesk",Arial,sans-serif; font-size:clamp(3.3rem,7vw,6.4rem); line-height:.95; letter-spacing:-.075em; } h1 span { color:var(--mint); }
+      .hero-copy > p:not(.eyebrow) { max-width:495px; margin:25px 0 30px; color:#c6d4d1; font-size:18px; line-height:1.6; }
+      .hero-button { display:inline-flex; gap:17px; align-items:center; padding:15px 19px; border-radius:10px; color:#02140f; background:var(--mint); text-decoration:none; font-weight:700; }.hero-button span { font-size:21px; }
+      .hero-robot { position:absolute; z-index:1; right:clamp(0px,4vw,70px); bottom:-75px; width:clamp(360px,42vw,640px); pointer-events:none; filter:drop-shadow(0 24px 28px rgba(0,0,0,.45)); }.hero-robot img { display:block; width:100%; height:auto; }
+      footer { padding:25px; text-align:center; color:#9eb7b1; border-top:1px solid rgba(155,255,224,.12); background:rgba(2,14,18,.84); font-size:13px; }
+      @media (max-width:760px) { .site-header { min-height:70px; padding-inline:18px; } nav { display:none; } .hero { min-height:680px; padding:80px 24px; }.hero-copy { max-width:100%; }.hero-robot { right:-80px; bottom:-85px; width:490px; opacity:.52; }.hero:after { opacity:.5; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Aspiring AI Deals home"><span class="brand-mark">A</span>ASPIRING AI DEALS</a>
+      <nav aria-label="Main navigation">
+        <a href="products.html">Products</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="cart-button" type="button" aria-label="Shopping cart">
+        Cart <span id="cart-count" aria-live="polite">0</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="about">
+        <div class="hero-copy">
+          <p class="eyebrow">CURATED DIGITAL TOOLS</p>
+          <h1>AI that helps<br /><span>ideas take shape.</span></h1>
+          <p>Explore useful digital products for creators, small teams, and people building what comes next.</p>
+          <a class="hero-button" href="products.html">Shop AI tools <span>→</span></a>
+        </div>
+        <div class="hero-robot" aria-hidden="true">
+          <img src="assets/aspiring-ai-robot.png" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer>© 2026 Aspiring AI Deals · Build with more clarity.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
